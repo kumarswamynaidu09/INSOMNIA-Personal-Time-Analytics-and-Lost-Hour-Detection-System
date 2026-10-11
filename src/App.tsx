@@ -12,12 +12,16 @@ import { ProfileView } from './components/profile/ProfileView';
 import { BottomNavigation } from './components/layout/BottomNavigation';
 import { AddActivityModal } from './components/timeline/AddActivityModal';
 import { WeeklyInsightsModal } from './components/insights/WeeklyInsightsModal';
+import { SplashScreen } from './components/splash/SplashScreen';
 
 const MainContent: React.FC = () => {
-  const { activeTab } = useApp();
+  const { activeTab, showSplash, setShowSplash } = useApp();
 
   return (
     <div className="min-h-screen bg-[#F0F2F6] text-[#0F172A] font-sans">
+      {/* Splash Screen */}
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
+
       {/* Centered Mobile-First Frame / Desktop Responsive Container */}
       <div className="max-w-md mx-auto min-h-screen bg-[#F8FAFC] shadow-xl sm:border-x sm:border-[#CBD5E1] flex flex-col relative">
         {/* Main Content Area */}

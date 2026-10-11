@@ -27,11 +27,13 @@ interface AppContextType {
   showWeeklyInsights: boolean;
   isAddModalOpen: boolean;
   activityToEdit: Activity | null;
+  showSplash: boolean;
 
   // Actions
   setActiveTab: (tab: NavigationTab) => void;
   setSelectedDate: (date: string) => void;
   setShowWeeklyInsights: (show: boolean) => void;
+  setShowSplash: (show: boolean) => void;
   openAddModal: (act?: Activity | null) => void;
   closeAddModal: () => void;
 
@@ -107,6 +109,7 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
   const [showWeeklyInsights, setShowWeeklyInsights] = useState<boolean>(false);
   const [isAddModalOpen, setIsAddModalOpen] = useState<boolean>(false);
   const [activityToEdit, setActivityToEdit] = useState<Activity | null>(null);
+  const [showSplash, setShowSplash] = useState<boolean>(true);
 
   // Sync to local storage
   useEffect(() => {
@@ -261,10 +264,12 @@ export const AppProvider: React.FC<{ children: ReactNode }> = ({ children }) => 
         showWeeklyInsights,
         isAddModalOpen,
         activityToEdit,
+        showSplash,
 
         setActiveTab,
         setSelectedDate,
         setShowWeeklyInsights,
+        setShowSplash,
         openAddModal,
         closeAddModal,
 

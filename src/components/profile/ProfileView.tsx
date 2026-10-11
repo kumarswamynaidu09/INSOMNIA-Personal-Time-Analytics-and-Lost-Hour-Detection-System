@@ -31,6 +31,7 @@ export const ProfileView: React.FC = () => {
     clearAllActivities,
     importData,
     activities,
+    setShowSplash,
   } = useApp();
 
   const [name, setName] = useState(preferences.name);
@@ -247,6 +248,20 @@ export const ProfileView: React.FC = () => {
               onChange={e => setShowOverlapsWarning(e.target.checked)}
               className="w-4 h-4 text-[#0F172A] rounded border-gray-300"
             />
+          </div>
+
+          <div className="flex items-center justify-between p-3 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]">
+            <div>
+              <span className="text-xs font-bold text-[#0F172A] block">Introductory Splash Screen</span>
+              <span className="text-[11px] text-[#64748B] block">Replay the 24-hour circular animation intro</span>
+            </div>
+            <button
+              type="button"
+              onClick={() => setShowSplash(true)}
+              className="px-3 py-1.5 rounded-lg bg-[#0F172A] text-[#FACC15] text-xs font-bold hover:bg-slate-800 transition cursor-pointer"
+            >
+              Replay Splash
+            </button>
           </div>
         </div>
       </form>
