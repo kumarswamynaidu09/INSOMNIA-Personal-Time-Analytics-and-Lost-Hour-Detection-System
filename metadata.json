@@ -1,0 +1,6 @@
+{
+  "name": "INSOMNIA — Lost Hours",
+  "description": "High-fidelity time audit, 24-hour daily allocation, and recoverable hours analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
